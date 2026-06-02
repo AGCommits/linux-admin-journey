@@ -152,6 +152,23 @@ Future versions of this project may include:
 
 ---
 
+## Projects
+
+### Linux User Management Lab
+
+A hands-on Linux administration project demonstrating:
+
+- User and group management
+- File ownership and permissions
+- Access control
+- Bash scripting
+- Documentation
+
+Location:
+
+```text
+projects/linux-user-management-lab
+
 ## Author
 
 Ash

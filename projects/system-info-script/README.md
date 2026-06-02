@@ -25,4 +25,5 @@ pwd
 echo ""
 
 echo "System Uptime:"
+
 uptime
