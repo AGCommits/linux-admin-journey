@@ -1,0 +1,11 @@
+# Ignore automatically generated timestamped network reports.
+reports/network-audit-*.txt
+
+# Keep a selected portfolio evidence report when one is created.
+!reports/network-audit-sample.txt
+
+# Ignore temporary editor and operating-system files.
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
