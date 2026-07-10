@@ -1,0 +1,12 @@
+[Unit]
+Description=Run Linux Admin Journey Maintenance Task Daily
+
+[Timer]
+OnCalendar=*-*-* 14:30:00
+Persistent=true
+RandomizedDelaySec=5m
+AccuracySec=1m
+Unit=linux-admin-maintenance.service
+
+[Install]
+WantedBy=timers.target

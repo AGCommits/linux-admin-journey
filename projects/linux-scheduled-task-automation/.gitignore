@@ -1,0 +1,15 @@
+# Ignore generated maintenance logs and reports.
+logs/*.log
+reports/maintenance-run-*.txt
+reports/scheduled-task-audit-*.txt
+
+# Keep representative portfolio evidence files.
+!logs/.gitkeep
+!reports/maintenance-run-sample.txt
+!reports/scheduled-task-audit-sample.txt
+
+# Ignore temporary editor and operating-system files.
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db

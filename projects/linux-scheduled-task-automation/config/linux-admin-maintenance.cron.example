@@ -1,0 +1,8 @@
+# Linux Admin Journey maintenance task
+#
+# Run every day at 14:30.
+# The absolute path is required because cron uses a limited environment.
+#
+# Do not install this cron entry at the same time as the systemd timer.
+
+30 14 * * * /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/scripts/maintenance-task.sh
