@@ -1,0 +1,11 @@
+# Ignore automatically generated timestamped security reports.
+reports/security-audit-*.txt
+
+# Keep the selected portfolio evidence report.
+!reports/security-audit-sample.txt
+
+# Ignore temporary editor and operating-system files.
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
