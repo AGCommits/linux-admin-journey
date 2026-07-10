@@ -1,0 +1,107 @@
+============================================================
+ Linux Scheduled Maintenance Report
+============================================================
+Generated:                   Fri Jul 10 06:37:54 PM BST 2026
+Hostname:                    localhost.localdomain
+Executed by:                 ash
+Effective UID:               1000
+Script version:              1.0.0
+Report file:                 /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/reports/maintenance-run-2026-07-10_18-37-36.txt
+
+============================================================
+ Executive Summary
+============================================================
+Root filesystem usage:       18%
+Memory usage:                38%
+Failed services:             3
+Available updates:           1
+
+============================================================
+ System Information
+============================================================
+Operating system:            Rocky Linux 9.8 (Blue Onyx)
+Kernel version:              5.14.0-687.17.1.el9_8.x86_64
+Architecture:                x86_64
+Uptime:                      up 48 minutes
+Boot time:                   2026-07-10 17:49:05
+
+============================================================
+ Filesystem Usage
+============================================================
+Filesystem          Type      Size  Used Avail Use% Mounted on
+/dev/mapper/rl-root xfs        35G  6.2G   29G  18% /
+devtmpfs            devtmpfs  3.8G     0  3.8G   0% /dev
+tmpfs               tmpfs     3.8G     0  3.8G   0% /dev/shm
+tmpfs               tmpfs     1.6G  9.2M  1.5G   1% /run
+tmpfs               tmpfs     769M  104K  768M   1% /run/user/1000
+/dev/sr0            iso9660    51M   51M     0 100% /run/media/ash/VBox_GAs_7.2.8
+/dev/sda1           xfs       960M  609M  352M  64% /boot
+
+============================================================
+ Memory Usage
+============================================================
+               total        used        free      shared  buff/cache   available
+Mem:           7.5Gi       2.9Gi       3.5Gi        43Mi       1.5Gi       4.6Gi
+Swap:          3.9Gi          0B       3.9Gi
+
+============================================================
+ System Load
+============================================================
+Load averages:               1.61 1.18 1.02
+ 18:37:54 up 48 min,  2 users,  load average: 1.61, 1.18, 1.02
+
+============================================================
+ Failed Services
+============================================================
+  UNIT                    LOAD   ACTIVE SUB    DESCRIPTION
+● mcelog.service          loaded failed failed Machine Check Exception Logging Daemon
+● vboxadd-service.service loaded failed failed vboxadd-service.service
+● vboxadd.service         loaded failed failed vboxadd.service
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+3 loaded units listed.
+
+============================================================
+ Available Package Updates
+============================================================
+Available update count:      1
+
+aardvark-dns.x86_64                  2:1.17.1-1.el9_8                  appstream
+
+============================================================
+ Recent High-Priority Logs
+============================================================
+Jul 10 17:49:06 localhost kernel: Warning: Deprecated Hardware is detected: x86_64-v2:AuthenticAMD:AMD Ryzen 5 4600H with Radeon Graphics will not be maintained in a future major release and may be disabled
+Jul 10 17:49:07 localhost kernel: Warning: Unmaintained driver is detected: e1000
+Jul 10 17:49:07 localhost kernel: Warning: Unmaintained driver is detected: e1000_init_module
+Jul 10 17:49:07 localhost kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jul 10 17:49:07 localhost kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jul 10 17:49:07 localhost kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jul 10 17:49:14 localhost alsactl[841]: alsa-lib main.c:1804:(snd_use_case_mgr_open) [error.ucm] failed to import hw:0 use case configuration -2
+Jul 10 17:49:42 localhost.localdomain systemd[1]: Failed to start vboxadd.service.
+Jul 10 17:49:43 localhost.localdomain systemd[1]: Failed to start vboxadd-service.service.
+Jul 10 17:50:17 localhost.localdomain gdm-password][3514]: gkr-pam: unable to locate daemon control file
+Jul 10 17:50:18 localhost.localdomain systemd[3529]: Failed to start Application launched by gnome-session-binary.
+Jul 10 17:50:23 localhost.localdomain gdm-wayland-session[3090]: GLib: Source ID 2 was not found when attempting to remove it
+Jul 10 17:50:23 localhost.localdomain gdm-launch-environment][3069]: GLib-GObject: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+Jul 10 17:54:22 localhost.localdomain setroubleshoot[4939]: SELinux is preventing /usr/bin/passwd from write access on the file /home/ash/linux-admin-journey/projects/linux-security-audit/reports/security-audit-2026-07-10_17-54-01.txt. For complete SELinux messages run: sealert -l e5269b91-1d7a-4fbe-b28d-cc20a8334643
+Jul 10 17:54:22 localhost.localdomain setroubleshoot[4939]: SELinux is preventing /usr/bin/passwd from write access on the file /home/ash/linux-admin-journey/projects/linux-security-audit/reports/security-audit-2026-07-10_17-54-01.txt. For complete SELinux messages run: sealert -l e5269b91-1d7a-4fbe-b28d-cc20a8334643
+Jul 10 18:31:10 localhost.localdomain systemd[6071]: linux-admin-maintenance.service: Failed at step EXEC spawning /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/scripts/maintenance-task.sh: Permission denied
+Jul 10 18:31:10 localhost.localdomain systemd[1]: Failed to start Linux Admin Journey Scheduled Maintenance Task.
+Jul 10 18:31:11 localhost.localdomain setroubleshoot[6074]: SELinux is preventing /usr/lib/systemd/systemd from execute access on the file maintenance-task.sh. For complete SELinux messages run: sealert -l 4d6eab8f-0f41-4413-b288-cf9e74ed5b74
+Jul 10 18:37:39 localhost.localdomain setroubleshoot[6341]: SELinux is preventing /usr/bin/python3.9 from using the nnp_transition access on a process. For complete SELinux messages run: sealert -l 6f62046f-0ba4-4094-88fb-c74080b8f3e5
+
+============================================================
+ Maintenance Assessment
+============================================================
+PASS: Root filesystem usage is within the expected range.
+PASS: Memory usage is within the expected range.
+WARNING: 3 failed service(s) require investigation.
+REVIEW: 1 package update(s) are available.
+
+============================================================
+ End of Report
+============================================================
+Scheduled maintenance snapshot completed successfully.

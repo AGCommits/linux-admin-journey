@@ -9,7 +9,7 @@ Type=oneshot
 User=ash
 Group=ash
 WorkingDirectory=/home/ash/linux-admin-journey/projects/linux-scheduled-task-automation
-ExecStart=/home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/scripts/maintenance-task.sh
+ExecStart=/usr/bin/bash /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/scripts/maintenance-task.sh
 
 NoNewPrivileges=true
 PrivateTmp=true

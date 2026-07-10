@@ -1,0 +1,246 @@
+============================================================
+ Linux Scheduled Task Audit Report
+============================================================
+Generated:                     Fri Jul 10 06:46:41 PM BST 2026
+Hostname:                      localhost.localdomain
+Executed by:                   ash
+Effective UID:                 1000
+Script version:                1.0.0
+Report file:                   /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/reports/scheduled-task-audit-2026-07-10_18-46-41.txt
+
+============================================================
+ Executive Summary
+============================================================
+crond service:                 ACTIVE
+Active timer count:            6
+Failed timer count:            0
+User cron entries:             1
+System cron files:             2
+Maintenance script:            PRESENT AND EXECUTABLE
+Service file:                  VALID
+Timer file:                    VALID
+Installed timer:               ACTIVE
+Timer enabled:                 ENABLED
+Recent execution:              SUCCESS FOUND
+
+============================================================
+ System Information
+============================================================
+Operating system:              Rocky Linux 9.8 (Blue Onyx)
+Kernel version:                5.14.0-687.17.1.el9_8.x86_64
+Architecture:                  x86_64
+Uptime:                        up 57 minutes
+
+============================================================
+ Cron Service Status
+============================================================
+crond status:                  ACTIVE
+● crond.service - Command Scheduler
+     Loaded: loaded (/usr/lib/systemd/system/crond.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2026-07-10 17:49:17 BST; 57min ago
+   Main PID: 1371 (crond)
+      Tasks: 1 (limit: 48745)
+     Memory: 1.1M (peak: 3.8M)
+        CPU: 98ms
+     CGroup: /system.slice/crond.service
+             └─1371 /usr/sbin/crond -n
+
+Jul 10 17:49:17 localhost.localdomain systemd[1]: Started Command Scheduler.
+Jul 10 17:49:17 localhost.localdomain crond[1371]: (CRON) STARTUP (1.5.7)
+Jul 10 17:49:17 localhost.localdomain crond[1371]: (CRON) INFO (Syslog will be used instead of sendmail.)
+Jul 10 17:49:17 localhost.localdomain crond[1371]: (CRON) INFO (RANDOM_DELAY will be scaled with factor 70% if used.)
+Jul 10 17:49:17 localhost.localdomain crond[1371]: (CRON) INFO (running with inotify support)
+Jul 10 18:01:01 localhost.localdomain CROND[5126]: (root) CMD (run-parts /etc/cron.hourly)
+Jul 10 18:01:01 localhost.localdomain CROND[5125]: (root) CMDEND (run-parts /etc/cron.hourly)
+PASS: The cron service is active.
+
+============================================================
+ Current User Crontab
+============================================================
+0 21 * * * /home/ash/linux-backup-automation/scripts/backup.sh
+Active user entries:           1
+
+============================================================
+ System Cron Configuration
+============================================================
+
+--- /etc/crontab ---
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+
+--- /etc/cron.d ---
+-rw-r--r-- root:root /etc/cron.d/0hourly
+
+--- /etc/cron.hourly ---
+-rwxr-xr-x root:root /etc/cron.hourly/0anacron
+
+--- /etc/cron.daily ---
+
+--- /etc/cron.weekly ---
+
+--- /etc/cron.monthly ---
+System cron file count:        2
+
+============================================================
+ Systemd Timers
+============================================================
+
+--- All Timers ---
+NEXT                        LEFT          LAST                        PASSED       UNIT                          ACTIVATES
+Fri 2026-07-10 20:25:38 BST 1h 38min left Fri 2026-07-10 18:30:48 BST 15min ago    dnf-makecache.timer           dnf-makecache.service
+Sat 2026-07-11 00:00:00 BST 5h 13min left Fri 2026-07-10 11:42:13 BST 7h ago       logrotate.timer               logrotate.service
+Sat 2026-07-11 00:00:00 BST 5h 13min left Fri 2026-07-10 11:42:13 BST 7h ago       mlocate-updatedb.timer        mlocate-updatedb.service
+Sat 2026-07-11 14:34:41 BST 19h left      -                           -            linux-admin-maintenance.timer linux-admin-maintenance.service
+Sat 2026-07-11 18:04:39 BST 23h left      Fri 2026-07-10 18:04:39 BST 42min ago    systemd-tmpfiles-clean.timer  systemd-tmpfiles-clean.service
+Sun 2026-07-12 01:00:00 BST 1 day 6h left Thu 2026-07-09 10:52:07 BST 1 day 7h ago raid-check.timer              raid-check.service
+
+6 timers listed.
+
+--- Failed Timers ---
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+Timer count:                   6
+Failed timers:                 0
+PASS: No failed systemd timers were detected.
+
+============================================================
+ Maintenance Task Files
+============================================================
+
+--- Maintenance Script ---
+Path:                          /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/scripts/maintenance-task.sh
+Status:                        PRESENT AND EXECUTABLE
+-rwxr-xr-x 755 ash:ash /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/scripts/maintenance-task.sh
+
+--- Service Unit ---
+Path:                          /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/services/linux-admin-maintenance.service
+Validation:                    VALID
+[Unit]
+Description=Linux Admin Journey Scheduled Maintenance Task
+Documentation=https://github.com/AGCommits/linux-admin-journey
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=ash
+Group=ash
+WorkingDirectory=/home/ash/linux-admin-journey/projects/linux-scheduled-task-automation
+ExecStart=/usr/bin/bash /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/scripts/maintenance-task.sh
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=/home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/reports
+ReadWritePaths=/home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/logs
+
+[Install]
+WantedBy=multi-user.target
+--- Timer Unit ---
+Path:                          /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/services/linux-admin-maintenance.timer
+Validation:                    VALID
+[Unit]
+Description=Run Linux Admin Journey Maintenance Task Daily
+
+[Timer]
+OnCalendar=*-*-* 14:30:00
+Persistent=true
+RandomizedDelaySec=5m
+AccuracySec=1m
+Unit=linux-admin-maintenance.service
+
+[Install]
+WantedBy=timers.target
+--- Cron Example ---
+Path:                          /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/config/linux-admin-maintenance.cron.example
+# Linux Admin Journey maintenance task
+#
+# Run every day at 14:30.
+# The absolute path is required because cron uses a limited environment.
+#
+# Do not install this cron entry at the same time as the systemd timer.
+
+30 14 * * * /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/scripts/maintenance-task.sh
+============================================================
+ Installed Maintenance Timer
+============================================================
+Runtime status:                ACTIVE
+Enabled status:                ENABLED
+● linux-admin-maintenance.timer - Run Linux Admin Journey Maintenance Task Daily
+     Loaded: loaded (/etc/systemd/system/linux-admin-maintenance.timer; enabled; preset: disabled)
+     Active: active (waiting) since Fri 2026-07-10 18:30:48 BST; 15min ago
+      Until: Fri 2026-07-10 18:30:48 BST; 15min ago
+    Trigger: Sat 2026-07-11 14:34:41 BST; 19h left
+   Triggers: ● linux-admin-maintenance.service
+
+Jul 10 18:30:48 localhost.localdomain systemd[1]: Started Run Linux Admin Journey Maintenance Task Daily.
+
+--- Next and Previous Execution ---
+NEXT                        LEFT     LAST PASSED UNIT                          ACTIVATES
+Sat 2026-07-11 14:34:41 BST 19h left -    -      linux-admin-maintenance.timer linux-admin-maintenance.service
+
+1 timers listed.
+
+============================================================
+ Maintenance Execution History
+============================================================
+Execution status:              SUCCESS FOUND
+Log file:                      /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/logs/maintenance-task.log
+2026-07-10 18:20:45 [INFO] Maintenance task started.
+2026-07-10 18:21:11 [INFO] Maintenance task completed successfully. Report: /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/reports/maintenance-run-2026-07-10_18-20-45.txt
+2026-07-10 18:37:36 [INFO] Maintenance task started.
+2026-07-10 18:37:55 [INFO] Maintenance task completed successfully. Report: /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/reports/maintenance-run-2026-07-10_18-37-36.txt
+
+--- Systemd Journal ---
+Jul 10 18:31:10 localhost.localdomain systemd[1]: Starting Linux Admin Journey Scheduled Maintenance Task...
+Jul 10 18:31:10 localhost.localdomain systemd[6071]: linux-admin-maintenance.service: Failed to locate executable /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/scripts/maintenance-task.sh: Permission denied
+Jul 10 18:31:10 localhost.localdomain systemd[6071]: linux-admin-maintenance.service: Failed at step EXEC spawning /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/scripts/maintenance-task.sh: Permission denied
+Jul 10 18:31:10 localhost.localdomain systemd[1]: linux-admin-maintenance.service: Main process exited, code=exited, status=203/EXEC
+Jul 10 18:31:10 localhost.localdomain systemd[1]: linux-admin-maintenance.service: Failed with result 'exit-code'.
+Jul 10 18:31:10 localhost.localdomain systemd[1]: Failed to start Linux Admin Journey Scheduled Maintenance Task.
+Jul 10 18:37:36 localhost.localdomain systemd[1]: Starting Linux Admin Journey Scheduled Maintenance Task...
+Jul 10 18:37:55 localhost.localdomain bash[6321]: Scheduled maintenance task completed.
+Jul 10 18:37:55 localhost.localdomain bash[6321]: Report saved to:
+Jul 10 18:37:55 localhost.localdomain bash[6321]: /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/reports/maintenance-run-2026-07-10_18-37-36.txt
+Jul 10 18:37:55 localhost.localdomain bash[6321]: Execution log:
+Jul 10 18:37:55 localhost.localdomain bash[6321]: /home/ash/linux-admin-journey/projects/linux-scheduled-task-automation/logs/maintenance-task.log
+Jul 10 18:37:55 localhost.localdomain systemd[1]: linux-admin-maintenance.service: Deactivated successfully.
+Jul 10 18:37:55 localhost.localdomain systemd[1]: Finished Linux Admin Journey Scheduled Maintenance Task.
+Jul 10 18:37:55 localhost.localdomain systemd[1]: linux-admin-maintenance.service: Consumed 6.222s CPU time.
+
+============================================================
+ Scheduling Assessment
+============================================================
+PASS: The maintenance script exists and is executable.
+PASS: The systemd service unit is present and valid.
+PASS: The systemd timer unit is present and valid.
+PASS: The maintenance timer is active.
+PASS: The maintenance timer is enabled at boot.
+PASS: A successful maintenance execution was found.
+
+============================================================
+ Overall Assessment
+============================================================
+Passed checks:                 8
+Warnings:                      0
+Review items:                  0
+Overall status:                GOOD
+
+============================================================
+ End of Report
+============================================================
+Scheduled task audit completed successfully.
