@@ -1,0 +1,8 @@
+# Keep Linux shell scripts compatible when edited from Windows.
+*.sh text eol=lf
+
+# Keep project documentation consistent across Windows and Linux.
+*.md text eol=lf
+
+# Keep generated text reports using Linux line endings.
+*.txt text eol=lf

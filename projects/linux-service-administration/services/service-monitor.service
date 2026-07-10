@@ -1,0 +1,14 @@
+[Unit]
+Description=Linux Service Administration - Service Monitor
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/service-monitor.sh
+Restart=always
+RestartSec=5
+User=ash
+WorkingDirectory=/home/ash/linux-service-administration
+
+[Install]
+WantedBy=multi-user.target

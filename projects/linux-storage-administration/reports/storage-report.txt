@@ -1,0 +1,175 @@
+=========================================
+ Linux Storage Report
+=========================================
+
+Block Devices
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sda           8:0    0   40G  0 disk 
+├─sda1        8:1    0    1G  0 part /boot
+└─sda2        8:2    0   39G  0 part 
+  ├─rl-root 253:0    0 35.1G  0 lvm  /
+  └─rl-swap 253:1    0  3.9G  0 lvm  [SWAP]
+sr0          11:0    1   51M  0 rom  /run/media/ash/VBox_GAs_7.2.8
+
+Filesystems
+NAME        FSTYPE      FSVER            LABEL          UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
+sda                                                                                                           
+├─sda1      xfs                                         977f9d40-8fab-48a3-923e-54d13cd0917e    351.4M    63% /boot
+└─sda2      LVM2_member LVM2 001                        fxZYZr-6hpk-rYFR-0Y33-zZhR-21yd-6oT1Dt                
+  ├─rl-root xfs                                         660ba485-8094-4bb8-a8c5-5c4b19b0cff7       29G    17% /
+  └─rl-swap swap        1                               4dec9957-7dd0-437f-a9c2-3b091e63ca55                  [SWAP]
+sr0         iso9660     Joliet Extension VBox_GAs_7.2.8 2026-04-18-10-51-51-50                       0   100% /run/media/ash/VBox_GAs_7.2.8
+
+Filesystem UUIDs
+/dev/mapper/rl-root: UUID="660ba485-8094-4bb8-a8c5-5c4b19b0cff7" TYPE="xfs"
+/dev/sda2: UUID="fxZYZr-6hpk-rYFR-0Y33-zZhR-21yd-6oT1Dt" TYPE="LVM2_member" PARTUUID="b64ac9e1-02"
+/dev/mapper/rl-swap: UUID="4dec9957-7dd0-437f-a9c2-3b091e63ca55" TYPE="swap"
+/dev/sr0: UUID="2026-04-18-10-51-51-50" LABEL="VBox_GAs_7.2.8" TYPE="iso9660"
+/dev/sda1: UUID="977f9d40-8fab-48a3-923e-54d13cd0917e" TYPE="xfs" PARTUUID="b64ac9e1-01"
+
+Disk Usage
+Filesystem           Size  Used Avail Use% Mounted on
+devtmpfs             1.8G     0  1.8G   0% /dev
+tmpfs                1.8G     0  1.8G   0% /dev/shm
+tmpfs                732M  9.2M  722M   2% /run
+/dev/mapper/rl-root   35G  6.1G   29G  18% /
+/dev/sda1            960M  609M  352M  64% /boot
+tmpfs                366M  112K  366M   1% /run/user/1000
+/dev/sr0              51M   51M     0 100% /run/media/ash/VBox_GAs_7.2.8
+
+Mounted Filesystems
+TARGET                                                  SOURCE              FSTYPE          OPTIONS
+/                                                       /dev/mapper/rl-root xfs             rw,relatime,seclabel,attr2,inode64,logbufs=8,logbsize=32k,noquota
+├─/proc                                                 proc                proc            rw,nosuid,nodev,noexec,relatime
+│ └─/proc/sys/fs/binfmt_misc                            systemd-1           autofs          rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14239
+├─/sys                                                  sysfs               sysfs           rw,nosuid,nodev,noexec,relatime,seclabel
+│ ├─/sys/kernel/security                                securityfs          securityfs      rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/cgroup                                      cgroup2             cgroup2         rw,nosuid,nodev,noexec,relatime,seclabel,nsdelegate,memory_recursiveprot
+│ ├─/sys/fs/pstore                                      pstore              pstore          rw,nosuid,nodev,noexec,relatime,seclabel
+│ ├─/sys/fs/bpf                                         bpf                 bpf             rw,nosuid,nodev,noexec,relatime,mode=700
+│ ├─/sys/fs/selinux                                     selinuxfs           selinuxfs       rw,nosuid,noexec,relatime
+│ ├─/sys/kernel/debug                                   debugfs             debugfs         rw,nosuid,nodev,noexec,relatime,seclabel
+│ ├─/sys/kernel/tracing                                 tracefs             tracefs         rw,nosuid,nodev,noexec,relatime,seclabel
+│ ├─/sys/fs/fuse/connections                            fusectl             fusectl         rw,nosuid,nodev,noexec,relatime
+│ └─/sys/kernel/config                                  configfs            configfs        rw,nosuid,nodev,noexec,relatime
+├─/dev                                                  devtmpfs            devtmpfs        rw,nosuid,seclabel,size=1838736k,nr_inodes=459684,mode=755,inode64
+│ ├─/dev/shm                                            tmpfs               tmpfs           rw,nosuid,nodev,seclabel,inode64
+│ ├─/dev/pts                                            devpts              devpts          rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000
+│ ├─/dev/hugepages                                      hugetlbfs           hugetlbfs       rw,relatime,seclabel,pagesize=2M
+│ └─/dev/mqueue                                         mqueue              mqueue          rw,nosuid,nodev,noexec,relatime,seclabel
+├─/run                                                  tmpfs               tmpfs           rw,nosuid,nodev,seclabel,size=748660k,nr_inodes=819200,mode=755,inode64
+│ ├─/run/credentials/systemd-tmpfiles-setup-dev.service none                ramfs           ro,nosuid,nodev,noexec,relatime,seclabel,mode=700
+│ ├─/run/credentials/systemd-sysctl.service             none                ramfs           ro,nosuid,nodev,noexec,relatime,seclabel,mode=700
+│ ├─/run/credentials/systemd-tmpfiles-setup.service     none                ramfs           ro,nosuid,nodev,noexec,relatime,seclabel,mode=700
+│ ├─/run/user/1000                                      tmpfs               tmpfs           rw,nosuid,nodev,relatime,seclabel,size=374328k,nr_inodes=93582,mode=700,uid=1000,gid=1000,inode64
+│ │ ├─/run/user/1000/gvfs                               gvfsd-fuse          fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+│ │ └─/run/user/1000/doc                                portal              fuse.portal     rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+│ └─/run/media/ash/VBox_GAs_7.2.8                       /dev/sr0            iso9660         ro,nosuid,nodev,relatime,nojoliet,check=s,map=n,blocksize=2048,uid=1000,gid=1000,dmode=500,fmode=400
+└─/boot                                                 /dev/sda1           xfs             rw,relatime,seclabel,attr2,inode64,logbufs=8,logbsize=32k,noquota
+
+Home Directory Usage
+371M	/home/ash
+
+Top Level Directory Usage
+0	/home/ash/Desktop
+0	/home/ash/Documents
+0	/home/ash/Downloads
+0	/home/ash/Music
+0	/home/ash/Public
+0	/home/ash/Templates
+0	/home/ash/Videos
+12K	/home/ash/linux-user-management-project
+16K	/home/ash/linux-storage-administration
+24K	/home/ash/Projects
+48K	/home/ash/linux-package-management
+52K	/home/ash/backup-automation-script
+80K	/home/ash/linux-networking-administration
+144K	/home/ash/linux-backup-automation
+148K	/home/ash/linux-log-analysis
+172K	/home/ash/linux-service-administration
+304K	/home/ash/linux-admin-journey
+400K	/home/ash/Pictures
+
+Current Project Usage
+16K	.
+
+Project Directories
+0	assets
+0	config
+8.0K	documentation
+0	README.md
+8.0K	reports
+0	screenshots
+0	scripts
+
+Largest Files
+1.4M	/home/ash/.cache/mozilla/firefox/gojwkys6.default-default/cache2/entries/EFDCF41A2295746760E1BB7003109C6BF837D7F3
+1.4M	/home/ash/.cache/mozilla/firefox/gojwkys6.default-default/safebrowsing/google-trackwhite-digest256.vlpset
+1.5M	/home/ash/.cache/mozilla/firefox/gojwkys6.default-default/cache2/entries/D5FFC485305BF03C15F01C40DAB15F3245EF26DA
+1.6M	/home/ash/.mozilla/firefox/gojwkys6.default-default/gmp-gmpopenh264/2.6.0/libgmpopenh264.so
+1.7M	/home/ash/.mozilla/firefox/gojwkys6.default-default/favicons.sqlite-wal
+1.9M	/home/ash/.cache/mozilla/firefox/gojwkys6.default-default/startupCache/scriptCache-child-current.bin
+2.0M	/home/ash/.cache/gnome-software/odrs/ratings.json
+2.2M	/home/ash/.mozilla/firefox/gojwkys6.default-default/places.sqlite-wal
+3.2M	/home/ash/.mozilla/firefox/gojwkys6.default-default/security_state/data.safe.bin
+3.3M	/home/ash/.cache/gnome-software/appstream/components.xmlb
+3.4M	/home/ash/.cache/mozilla/firefox/gojwkys6.default-default/startupCache/startupCache.8.little
+3.8M	/home/ash/.cache/mozilla/firefox/gojwkys6.default-default/cache2/entries/4DDF99D0461C50BB47DC9EC040A8AD4C9355497C
+5.0M	/home/ash/.mozilla/firefox/gojwkys6.default-default/favicons.sqlite
+5.0M	/home/ash/.mozilla/firefox/gojwkys6.default-default/places.sqlite
+5.6M	/home/ash/.cache/mozilla/firefox/gojwkys6.default-default/cache2/entries/6470F4D9D9C64009C6A07950801C51973E546716
+5.9M	/home/ash/.cache/mozilla/firefox/gojwkys6.default-default/cache2/entries/F87C4F057F599439C22A4FEEBC88697816FD87CA
+5.9M	/home/ash/.mozilla/firefox/gojwkys6.default-default/security_state/crlite.filter
+11M	/home/ash/.cache/mozilla/firefox/gojwkys6.default-default/startupCache/scriptCache.bin
+11M	/home/ash/.cache/mozilla/firefox/gojwkys6.default-default/startupCache/scriptCache-current.bin
+19M	/home/ash/.mozilla/firefox/gojwkys6.default-default/storage/permanent/chrome/idb/3870112724rsegmnoittet-es.sqlite
+
+=========================================
+ Filesystem Table (/etc/fstab)
+=========================================
+
+#
+# /etc/fstab
+# Created by anaconda on Wed May 27 17:31:55 2026
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/rl-root     /                       xfs     defaults        0 0
+UUID=977f9d40-8fab-48a3-923e-54d13cd0917e /boot                   xfs     defaults        0 0
+/dev/mapper/rl-swap     none                    swap    defaults        0 0
+
+=========================================
+ Current Mounts
+=========================================
+TARGET                                                  SOURCE              FSTYPE          OPTIONS
+/                                                       /dev/mapper/rl-root xfs             rw,relatime,seclabel,attr2,inode64,logbufs=8,logbsize=32k,noquota
+├─/proc                                                 proc                proc            rw,nosuid,nodev,noexec,relatime
+│ └─/proc/sys/fs/binfmt_misc                            systemd-1           autofs          rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14239
+├─/sys                                                  sysfs               sysfs           rw,nosuid,nodev,noexec,relatime,seclabel
+│ ├─/sys/kernel/security                                securityfs          securityfs      rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/cgroup                                      cgroup2             cgroup2         rw,nosuid,nodev,noexec,relatime,seclabel,nsdelegate,memory_recursiveprot
+│ ├─/sys/fs/pstore                                      pstore              pstore          rw,nosuid,nodev,noexec,relatime,seclabel
+│ ├─/sys/fs/bpf                                         bpf                 bpf             rw,nosuid,nodev,noexec,relatime,mode=700
+│ ├─/sys/fs/selinux                                     selinuxfs           selinuxfs       rw,nosuid,noexec,relatime
+│ ├─/sys/kernel/debug                                   debugfs             debugfs         rw,nosuid,nodev,noexec,relatime,seclabel
+│ ├─/sys/kernel/tracing                                 tracefs             tracefs         rw,nosuid,nodev,noexec,relatime,seclabel
+│ ├─/sys/fs/fuse/connections                            fusectl             fusectl         rw,nosuid,nodev,noexec,relatime
+│ └─/sys/kernel/config                                  configfs            configfs        rw,nosuid,nodev,noexec,relatime
+├─/dev                                                  devtmpfs            devtmpfs        rw,nosuid,seclabel,size=1838736k,nr_inodes=459684,mode=755,inode64
+│ ├─/dev/shm                                            tmpfs               tmpfs           rw,nosuid,nodev,seclabel,inode64
+│ ├─/dev/pts                                            devpts              devpts          rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000
+│ ├─/dev/hugepages                                      hugetlbfs           hugetlbfs       rw,relatime,seclabel,pagesize=2M
+│ └─/dev/mqueue                                         mqueue              mqueue          rw,nosuid,nodev,noexec,relatime,seclabel
+├─/run                                                  tmpfs               tmpfs           rw,nosuid,nodev,seclabel,size=748660k,nr_inodes=819200,mode=755,inode64
+│ ├─/run/credentials/systemd-tmpfiles-setup-dev.service none                ramfs           ro,nosuid,nodev,noexec,relatime,seclabel,mode=700
+│ ├─/run/credentials/systemd-sysctl.service             none                ramfs           ro,nosuid,nodev,noexec,relatime,seclabel,mode=700
+│ ├─/run/credentials/systemd-tmpfiles-setup.service     none                ramfs           ro,nosuid,nodev,noexec,relatime,seclabel,mode=700
+│ ├─/run/user/1000                                      tmpfs               tmpfs           rw,nosuid,nodev,relatime,seclabel,size=374328k,nr_inodes=93582,mode=700,uid=1000,gid=1000,inode64
+│ │ ├─/run/user/1000/gvfs                               gvfsd-fuse          fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+│ │ └─/run/user/1000/doc                                portal              fuse.portal     rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+│ └─/run/media/ash/VBox_GAs_7.2.8                       /dev/sr0            iso9660         ro,nosuid,nodev,relatime,nojoliet,check=s,map=n,blocksize=2048,uid=1000,gid=1000,dmode=500,fmode=400
+└─/boot                                                 /dev/sda1           xfs             rw,relatime,seclabel,attr2,inode64,logbufs=8,logbsize=32k,noquota

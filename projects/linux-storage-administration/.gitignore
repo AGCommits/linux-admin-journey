@@ -1,0 +1,8 @@
+# Ignore automatically generated timestamped audit reports.
+reports/storage-audit-*.txt
+
+# Keep the selected portfolio evidence report.
+!reports/storage-audit-2026-07-10_13-11-00.txt
+
+# Keep the static sample report.
+!reports/storage-report.txt

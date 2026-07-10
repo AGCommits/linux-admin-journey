@@ -1,0 +1,199 @@
+=================================
+ Linux Log Analysis Report
+=================================
+Hostname: localhost.localdomain
+Current User Running Script: ash
+Kernel Version: 5.14.0-687.12.1.el9_8.x86_64
+Report Generated: Sat Jun  6 08:43:39 PM BST 2026
+Report File: /home/ash/linux-log-analysis/reports/log-report-2026-06-06_20-43.txt
+
+=================================
+ Executive Summary
+=================================
+Failed Services Detected: 3
+Currently Logged In Users: 1
+Failed Login Records Found: 7
+
+WARNING: Failed services were detected. Review the Failed Services section.
+WARNING: Failed login records were detected. Review the Failed Logins section.
+
+=================================
+ Recent Logins
+=================================
+ash      tty2         local            Sat Jun  6 14:35   still logged in
+ash      tty2         local            Sat Jun  6 14:35 - 14:35  (00:00)
+reboot   system boot  5.14.0-687.12.1. Sat Jun  6 14:33   still running
+ash      tty2         local            Fri Jun  5 12:32 - down   (01:28)
+ash      tty2         local            Fri Jun  5 12:32 - 12:32  (00:00)
+
+wtmp begins Wed May 27 18:55:07 2026
+
+=================================
+ Failed Logins
+=================================
+ash      seat0        local            Fri May 29 19:09 - 19:09  (00:00)
+analyst  pts/0                         Thu May 28 17:39 - 17:39  (00:00)
+analyst  pts/0                         Thu May 28 17:32 - 17:32  (00:00)
+analyst  pts/0                         Thu May 28 17:32 - 17:32  (00:00)
+analyst  pts/0                         Thu May 28 17:31 - 17:31  (00:00)
+analyst  pts/0                         Thu May 28 17:31 - 17:31  (00:00)
+
+btmp begins Thu May 28 17:31:09 2026
+
+=================================
+ Recent Errors
+=================================
+Jun 06 14:33:40 localhost kernel: Warning: Deprecated Hardware is detected: x86_64-v2:AuthenticAMD:AMD Ryzen 5 4600H with Radeon Graphics will not be maintained in a future major release and may be disabled
+Jun 06 14:33:40 localhost kernel: Warning: Unmaintained driver is detected: e1000
+Jun 06 14:33:41 localhost kernel: Warning: Unmaintained driver is detected: e1000_init_module
+Jun 06 14:33:41 localhost kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 06 14:33:41 localhost kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 06 14:33:41 localhost kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 06 14:33:52 localhost alsactl[803]: alsa-lib main.c:1804:(snd_use_case_mgr_open) [error.ucm] failed to import hw:0 use case configuration -2
+Jun 06 14:34:32 localhost.localdomain systemd[1]: Failed to start vboxadd.service.
+Jun 06 14:34:32 localhost.localdomain systemd[1]: Failed to start vboxadd-service.service.
+Jun 06 14:34:33 localhost.localdomain dbus-broker-launch[3052]: Access denied to service directory '/root/.local/share/flatpak/exports/share/dbus-1/services'
+Jun 06 14:35:14 localhost.localdomain gdm-password][3460]: gkr-pam: unable to locate daemon control file
+Jun 06 14:35:15 localhost.localdomain dbus-broker-launch[3498]: Access denied to service directory '/root/.local/share/flatpak/exports/share/dbus-1/services'
+Jun 06 14:35:16 localhost.localdomain systemd[3477]: Failed to start Application launched by gnome-session-binary.
+Jun 06 14:35:21 localhost.localdomain gdm-wayland-session[3050]: GLib: Source ID 2 was not found when attempting to remove it
+Jun 06 14:35:21 localhost.localdomain gdm-launch-environment][3032]: GLib-GObject: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+=================================
+ SSH Activity
+=================================
+Jun 06 14:33:47 localhost systemd[1]: Created slice Slice /system/sshd-keygen.
+Jun 06 14:33:51 localhost systemd[1]: OpenSSH ecdsa Server Key Generation was skipped because no trigger condition checks were met.
+Jun 06 14:33:51 localhost systemd[1]: OpenSSH ed25519 Server Key Generation was skipped because no trigger condition checks were met.
+Jun 06 14:33:51 localhost systemd[1]: OpenSSH rsa Server Key Generation was skipped because no trigger condition checks were met.
+Jun 06 14:33:51 localhost systemd[1]: Reached target sshd-keygen.target.
+Jun 06 14:33:59 localhost.localdomain systemd[1]: Starting OpenSSH server daemon...
+Jun 06 14:33:59 localhost.localdomain sshd[1296]: Server listening on 0.0.0.0 port 22.
+Jun 06 14:33:59 localhost.localdomain sshd[1296]: Server listening on :: port 22.
+Jun 06 14:33:59 localhost.localdomain systemd[1]: Started OpenSSH server daemon.
+Jun 06 14:35:16 localhost.localdomain gnome-keyring-ssh.desktop[3555]: SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+Jun 06 14:35:16 localhost.localdomain gnome-keyring-secrets.desktop[3557]: SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+
+=================================
+ System Uptime
+=================================
+ 20:43:40 up  6:10,  1 user,  load average: 1.16, 1.26, 0.99
+
+=================================
+ Memory Usage
+=================================
+               total        used        free      shared  buff/cache   available
+Mem:           3.6Gi       2.4Gi       642Mi        32Mi       847Mi       1.2Gi
+Swap:          3.9Gi        11Mi       3.9Gi
+
+=================================
+ Disk Usage
+=================================
+Filesystem           Size  Used Avail Use% Mounted on
+devtmpfs             1.8G     0  1.8G   0% /dev
+tmpfs                1.8G     0  1.8G   0% /dev/shm
+tmpfs                732M  9.2M  722M   2% /run
+/dev/mapper/rl-root   35G  5.9G   30G  17% /
+/dev/sda1            960M  609M  352M  64% /boot
+tmpfs                366M  112K  366M   1% /run/user/1000
+/dev/sr0              51M   51M     0 100% /run/media/ash/VBox_GAs_7.2.8
+
+=================================
+ Failed Services
+=================================
+  UNIT                    LOAD   ACTIVE SUB    DESCRIPTION
+● mcelog.service          loaded failed failed Machine Check Exception Logging Daemon
+● vboxadd-service.service loaded failed failed vboxadd-service.service
+● vboxadd.service         loaded failed failed vboxadd.service
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+3 loaded units listed.
+
+=================================
+ Logged In Users
+=================================
+ash      tty2         2026-06-06 14:35 (local)
+
+=================================
+ Network Information
+=================================
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:8d:b7:7e brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3
+       valid_lft 64220sec preferred_lft 64220sec
+    inet6 fd17:625c:f037:2:a00:27ff:fe8d:b77e/64 scope global dynamic noprefixroute 
+       valid_lft 86321sec preferred_lft 14321sec
+    inet6 fe80::a00:27ff:fe8d:b77e/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+
+=================================
+ Top Memory Processes
+=================================
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+ash         4401 13.1 24.6 4185684 921268 ?      Sl   14:35  48:17 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:31720 -prefMapHandle 1:271830 -jsInitHandle 2:242716 -parentBuildID 20260528093553 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {3fd3c66b-6df5-4b78-b4c8-a0348182edfb} -parentPid 4200 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 4 tab
+ash         4200 13.1 13.6 12233280 509844 ?     Sl   14:35  48:22 /usr/lib64/firefox/firefox
+ash         3561 20.1 11.5 4185524 431120 ?      Ssl  14:35  74:11 /usr/bin/gnome-shell
+ash         4362  0.1  5.0 2797836 189848 ?      Sl   14:35   0:34 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:34414 -prefMapHandle 1:271830 -jsInitHandle 2:242716 -parentBuildID 20260528093553 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {62ca8bc1-5020-4ce9-bc34-b6b5a66448e7} -parentPid 4200 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 2 tab
+ash         4450  0.0  3.2 2743688 123456 ?      Sl   14:35   0:01 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43229 -prefMapHandle 1:271830 -jsInitHandle 2:242716 -parentBuildID 20260528093553 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {9666e5fc-d636-4564-8d4e-59d9e6cea560} -parentPid 4200 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 6 tab
+ash         3755  0.0  3.0 981644 114848 ?       Sl   14:35   0:07 /usr/bin/gnome-software --gapplication-service
+ash         4521  0.0  2.5 2707016 95472 ?       Sl   14:35   0:17 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:40652 -prefMapHandle 1:271830 -jsInitHandle 2:242716 -parentBuildID 20260528093553 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {05332c88-4b8e-43e3-be42-6f592916ce52} -parentPid 4200 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 8 tab
+ash         4534  0.0  2.5 2707016 95484 ?       Sl   14:35   0:17 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:40652 -prefMapHandle 1:271830 -jsInitHandle 2:242716 -parentBuildID 20260528093553 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {458ed9c1-7477-49db-9e02-e691bb9d445e} -parentPid 4200 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 9 tab
+ash         4408  0.0  2.5 2707016 95104 ?       Sl   14:35   0:17 /usr/lib64/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:31720 -prefMapHandle 1:271830 -jsInitHandle 2:242716 -parentBuildID 20260528093553 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {970f471b-0087-4f55-a233-e38df03dada4} -parentPid 4200 -greomni /usr/lib64/firefox/omni.ja -appomni /usr/lib64/firefox/browser/omni.ja -appDir /usr/lib64/firefox/browser 5 tab
+
+=================================
+ CPU Information
+=================================
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           48 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  2
+On-line CPU(s) list:                     0,1
+Vendor ID:                               AuthenticAMD
+Model name:                              AMD Ryzen 5 4600H with Radeon Graphics
+CPU family:                              23
+Model:                                   96
+Thread(s) per core:                      1
+Core(s) per socket:                      2
+Socket(s):                               1
+Stepping:                                1
+BogoMIPS:                                5988.76
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 movbe popcnt aes rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch ssbd vmmcall fsgsbase bmi1 bmi2 rdseed adx clflushopt sha_ni arat
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               64 KiB (2 instances)
+L1i cache:                               64 KiB (2 instances)
+L2 cache:                                1 MiB (2 instances)
+L3 cache:                                16 MiB (2 instances)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0,1
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Mitigation; untrained return thunk; SMT disabled
+Vulnerability Spec rstack overflow:      Mitigation; SMT disabled
+Vulnerability Spec store bypass:         Not affected
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+=================================
+ End of Report
+=================================

@@ -27,6 +27,7 @@ The service is implemented as a Bash script and managed using a custom `.service
 
 ```text
 linux-service-administration/
+
 ├── assets/
 ├── config/
 ├── documentation/
@@ -35,3 +36,32 @@ linux-service-administration/
 ├── scripts/
 ├── services/
 └── README.md
+```
+
+---
+
+## Features
+
+- Custom monitoring service
+- Continuous heartbeat logging
+- Automatic restart after failure
+- systemd integration
+- Service logging
+- Failure investigation
+- Recovery testing
+
+---
+
+## Technologies Used
+
+- Rocky Linux 9
+- Bash
+- systemd
+- journalctl
+- nano
+
+---
+
+## Learning Outcomes
+
+This project demonstrates the complete lifecycle of a Linux service, from development through deployment, troubleshooting, monitoring, and recovery.

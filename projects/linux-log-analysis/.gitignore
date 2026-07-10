@@ -1,0 +1,5 @@
+# Ignore newly generated timestamped log-analysis reports.
+reports/log-report-*.txt
+
+# Keep the selected portfolio evidence report.
+!reports/log-report-2026-06-06_20-43.txt

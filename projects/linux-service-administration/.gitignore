@@ -1,0 +1,5 @@
+# Ignore runtime-generated service-monitor log files.
+reports/*.log
+
+# Keep static sample reports and documentation under version control.
+!reports/*-sample.txt

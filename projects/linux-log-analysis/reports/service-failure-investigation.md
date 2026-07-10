@@ -43,22 +43,3 @@ Initial Assessment:
 Related to VirtualBox Guest Additions installation issues.
 
 Requires further investigation and potential reinstallation after matching kernel-devel packages.
-
----
-
-## Skills Demonstrated
-
-* Service investigation
-* Linux troubleshooting
-* systemctl usage
-* journalctl usage
-* Root cause analysis
-* Documentation and handoff preparation
-
----
-
-## Outcome
-
-The failures identified were determined to be related primarily to the VirtualBox environment rather than the Rocky Linux operating system itself.
-
-This investigation demonstrated the ability to distinguish between operating system issues and virtualization platform issues.

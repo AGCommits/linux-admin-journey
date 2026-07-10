@@ -2,105 +2,56 @@
 
 ## Overview
 
-This project demonstrates Linux log analysis, Bash scripting, troubleshooting, and automated report generation using Rocky Linux.
+This project was created to practise Linux system log analysis on Rocky Linux.
 
-The goal of the project was to create a reusable administration tool capable of collecting system information and generating timestamped reports for operational review.
+The project uses standard Linux administration tools to investigate:
 
----
+- System logs
+- Login activity
+- Failed login attempts
+- SSH activity
+- System errors
 
-## Features
+A Bash script was created to automate collection of useful log information.
 
-* Recent login analysis
-* Failed login analysis
-* System error collection
-* SSH activity review
-* Service failure investigation
-* CPU information reporting
-* Network information reporting
-* Memory usage reporting
-* Disk usage reporting
-* Top memory-consuming processes
-* Executive summary section
-* Automated timestamped report generation
+## Tools Used
 
----
-
-## Technologies Used
-
-* Rocky Linux 9
-* Bash
-* systemd
-* journalctl
-* VirtualBox
-* Git
-* GitHub
-
----
+- Rocky Linux 9
+- journalctl
+- grep
+- last
+- lastb
+- Bash
 
 ## Project Structure
 
 ```text
 linux-log-analysis/
 ├── documentation
-│   └── project-notes.md
 ├── reports
-│   ├── log-report-*.txt
-│   └── service-failure-investigation.md
 ├── scripts
-│   └── log-analyzer.sh
 └── README.md
 ```
 
----
+## Script
 
-## Example Commands
+The main script is:
 
-Run the reporting script:
-
-```bash
-./scripts/log-analyzer.sh
+```text
+scripts/log-analyzer.sh
 ```
 
-View generated reports:
+The script collects:
 
-```bash
-ls reports
-```
-
-Review failed services:
-
-```bash
-systemctl --failed
-```
-
----
+- Recent logins
+- Failed logins
+- Recent system errors
+- SSH activity
 
 ## Skills Demonstrated
 
-* Linux Administration
-* Bash Scripting
-* Troubleshooting
-* Log Analysis
-* Service Investigation
-* System Monitoring
-* Documentation
-* Handoff Preparation
-
----
-
-## Key Learning Outcomes
-
-* Working with Linux log files
-* Investigating failed services
-* Building maintainable Bash scripts
-* Creating automated reports
-* Writing handoff-quality documentation
-* Managing projects using Git and GitHub
-
----
-
-## Author
-
-Ash
-
-Linux System Administration Portfolio Project
+- Linux administration
+- Log analysis
+- Troubleshooting
+- Bash scripting
+- Report generation
