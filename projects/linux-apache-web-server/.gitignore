@@ -1,0 +1,14 @@
+# Ignore automatically generated Apache audit reports.
+reports/apache-audit-*.txt
+
+# Keep one representative portfolio report.
+!reports/apache-audit-sample.txt
+
+# Ignore deployment backups and temporary files.
+*.bak
+*.tmp
+*.swp
+
+# Ignore operating-system files.
+.DS_Store
+Thumbs.db
