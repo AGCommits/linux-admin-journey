@@ -1,0 +1,255 @@
+============================================================
+ Linux Apache Web Server Audit Report
+============================================================
+Generated:                     Sat Jul 11 04:14:25 PM BST 2026
+Hostname:                      localhost.localdomain
+Executed by:                   root
+Effective UID:                 0
+Script version:                1.0.0
+Report file:                   /home/ash/linux-admin-journey/projects/linux-apache-web-server/reports/apache-audit-2026-07-11_16-14-24.txt
+
+============================================================
+ Executive Summary
+============================================================
+Apache package:                INSTALLED
+Apache service:                ACTIVE
+Enabled at boot:               ENABLED
+Configuration:                 VALID
+TCP port 80:                   LISTENING
+HTTP test:                     PASS
+Firewall:                      HTTP ALLOWED
+SELinux:                       Enforcing
+Virtual host file:             PRESENT
+Document root:                 PRESENT
+
+============================================================
+ Apache Package Information
+============================================================
+Name        : httpd
+Version     : 2.4.62
+Release     : 13.el9_8.1
+Architecture: x86_64
+Install Date: Sat 11 Jul 2026 04:02:43 PM BST
+Group       : Unspecified
+Size        : 60697
+License     : ASL 2.0
+Signature   : RSA/SHA256, Sat 30 May 2026 06:24:16 AM BST, Key ID 702d426d350d275d
+Source RPM  : httpd-2.4.62-13.el9_8.1.src.rpm
+Build Date  : Sat 30 May 2026 04:05:30 AM BST
+Build Host  : ord1-prod-x86build006.svc.aws.rockylinux.org
+Packager    : Rocky Linux Build System <releng@rockylinux.org>
+Vendor      : Rocky Enterprise Software Foundation
+URL         : https://httpd.apache.org/
+Bug URL     : https://bugs.rockylinux.org
+Summary     : Apache HTTP Server
+Description :
+The Apache HTTP Server is a powerful, efficient, and extensible
+web server.
+PASS: The Apache package is installed.
+
+============================================================
+ Apache Service Status
+============================================================
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-07-11 16:10:04 BST; 4min 20s ago
+       Docs: man:httpd.service(8)
+   Main PID: 8025 (httpd)
+     Status: "Total requests: 5; Idle/Busy workers 100/0;Requests/sec: 0.0192; Bytes served/sec:  49 B/sec"
+      Tasks: 177 (limit: 48745)
+     Memory: 14.2M (peak: 14.7M)
+        CPU: 534ms
+     CGroup: /system.slice/httpd.service
+             ├─8025 /usr/sbin/httpd -DFOREGROUND
+             ├─8026 /usr/sbin/httpd -DFOREGROUND
+             ├─8027 /usr/sbin/httpd -DFOREGROUND
+             ├─8028 /usr/sbin/httpd -DFOREGROUND
+             └─8030 /usr/sbin/httpd -DFOREGROUND
+
+Jul 11 16:10:04 localhost.localdomain systemd[1]: Starting The Apache HTTP Server...
+Jul 11 16:10:04 localhost.localdomain httpd[8025]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using localhost.localdomain. Set the 'ServerName' directive globally to suppress this message
+Jul 11 16:10:04 localhost.localdomain httpd[8025]: Server configured, listening on: port 80
+Jul 11 16:10:04 localhost.localdomain systemd[1]: Started The Apache HTTP Server.
+PASS: The Apache service is active.
+PASS: Apache is enabled at boot.
+
+============================================================
+ Configuration Validation
+============================================================
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using localhost.localdomain. Set the 'ServerName' directive globally to suppress this message
+Syntax OK
+PASS: Apache configuration syntax is valid.
+
+============================================================
+ Virtual Host Configuration
+============================================================
+# Linux Admin Journey Apache virtual host
+#
+# Deployed to:
+# /etc/httpd/conf.d/linux-admin-site.conf
+
+<VirtualHost *:80>
+    ServerName linux-admin.local
+    ServerAdmin webmaster@localhost
+
+    DocumentRoot "/var/www/linux-admin-site"
+
+    <Directory "/var/www/linux-admin-site">
+        Options -Indexes +FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    DirectoryIndex index.html
+
+    ErrorLog "/var/log/httpd/linux-admin-site-error.log"
+    CustomLog "/var/log/httpd/linux-admin-site-access.log" combined
+
+    ServerSignature Off
+</VirtualHost>PASS: The portfolio virtual-host configuration is present.
+
+--- Resolved Virtual Hosts ---
+apachectl: The "-S" option is not supported.
+
+============================================================
+ Loaded Apache Modules
+============================================================
+apachectl: The "-M" option is not supported.
+
+============================================================
+ Document Root
+============================================================
+Expected path:                 /var/www/linux-admin-site
+drwxr-xr-x root:root /var/www/linux-admin-site
+-rw-r--r-- root:root /var/www/linux-admin-site/index.html
+-rw-r--r-- root:root /var/www/linux-admin-site/index.html.bak-2026-07-11_16-10-02
+PASS: The document root is present.
+
+============================================================
+ Listening Ports
+============================================================
+State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                                                                                                 
+LISTEN 0      511                *:80              *:*    users:(("httpd",pid=8030,fd=4),("httpd",pid=8028,fd=4),("httpd",pid=8027,fd=4),("httpd",pid=8025,fd=4))
+PASS: A service is listening on TCP port 80.
+
+============================================================
+ HTTP Availability Test
+============================================================
+Test URL:                      http://linux-admin.local/
+Test status:                   PASS
+HTTP/1.1 200 OK
+Date: Sat, 11 Jul 2026 15:14:25 GMT
+Server: Apache/2.4.62 (Rocky Linux)
+Last-Modified: Sat, 11 Jul 2026 15:10:02 GMT
+ETag: "8aa-656574060ce08"
+Accept-Ranges: bytes
+Content-Length: 2218
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Admin Journey</title>
+
+    <style>
+        body {
+            max-width: 900px;
+            margin: 40px auto;
+PASS: The local website responded successfully.
+
+============================================================
+ Firewall Assessment
+============================================================
+Firewall status:               HTTP ALLOWED
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s3
+  sources: 
+  services: cockpit dhcpv6-client http ssh
+  ports: 
+  protocols: 
+  forward: yes
+  masquerade: no
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+PASS: The firewall permits HTTP traffic.
+
+============================================================
+ SELinux Assessment
+============================================================
+SELinux status:                Enforcing
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      33
+
+--- Web Root Context ---
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_t:s0 66 Jul 11 16:10 /var/www/linux-admin-site
+
+--- Website File Context ---
+total 8
+-rw-r--r--. 1 root root system_u:object_r:httpd_sys_content_t:s0 2218 Jul 11 16:10 index.html
+-rw-r--r--. 1 root root system_u:object_r:httpd_sys_content_t:s0 2218 Jul 11 16:02 index.html.bak-2026-07-11_16-10-02
+PASS: SELinux is enforcing.
+
+============================================================
+ Apache Access Log
+============================================================
+127.0.0.1 - - [11/Jul/2026:16:02:49 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:03:03 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:03:27 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:04:38 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:04:42 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:05:07 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:05:21 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:05:36 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:05:44 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:10:04 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:11:15 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:11:22 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:11:42 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:14:24 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+127.0.0.1 - - [11/Jul/2026:16:14:25 +0100] "GET / HTTP/1.1" 200 2218 "-" "curl/7.76.1"
+
+============================================================
+ Apache Error Log
+============================================================
+
+============================================================
+ Recent Apache Journal
+============================================================
+Jul 11 16:02:47 localhost.localdomain systemd[1]: Starting The Apache HTTP Server...
+Jul 11 16:02:47 localhost.localdomain httpd[7007]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using localhost.localdomain. Set the 'ServerName' directive globally to suppress this message
+Jul 11 16:02:47 localhost.localdomain httpd[7007]: Server configured, listening on: port 80
+Jul 11 16:02:47 localhost.localdomain systemd[1]: Started The Apache HTTP Server.
+Jul 11 16:10:03 localhost.localdomain systemd[1]: Stopping The Apache HTTP Server...
+Jul 11 16:10:04 localhost.localdomain systemd[1]: httpd.service: Deactivated successfully.
+Jul 11 16:10:04 localhost.localdomain systemd[1]: Stopped The Apache HTTP Server.
+Jul 11 16:10:04 localhost.localdomain systemd[1]: Starting The Apache HTTP Server...
+Jul 11 16:10:04 localhost.localdomain httpd[8025]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using localhost.localdomain. Set the 'ServerName' directive globally to suppress this message
+Jul 11 16:10:04 localhost.localdomain httpd[8025]: Server configured, listening on: port 80
+Jul 11 16:10:04 localhost.localdomain systemd[1]: Started The Apache HTTP Server.
+
+============================================================
+ Overall Assessment
+============================================================
+Passed checks:                 10
+Warnings:                      0
+Review items:                  0
+Overall status:                GOOD
+
+============================================================
+ End of Report
+============================================================
+Apache web server audit completed successfully.
