@@ -1,0 +1,11 @@
+# Ignore generated system-health reports.
+reports/system-health-*.txt
+
+# Keep one representative portfolio report.
+!reports/system-health-sample.txt
+
+# Ignore temporary files.
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
